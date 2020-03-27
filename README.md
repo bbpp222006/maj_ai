@@ -46,3 +46,23 @@ in_dic = {
     }
 
 ```
+
+原始代码里面状态管理比较复杂, 干脆直接每次请求都包含所有信息. 
+
+\test_agent\utils\clfs 里面应该是训练好的神经网络, 文件比较大,各位可以去原项目里下载(https://github.com/erreurt/MahjongAI )   
+server.py是简单的服务器开启,如果服务器跑的起来的话....  
+
+如果上传到了服务器,直接post json字符串到特定端口即可  
+下面讲一下返回的json
+
+```
+return_dic = {
+'chi':False,  #是否应该吃
+'pon':False,  #是否应该碰
+'kan':False,  #是否应该杠 ,  包含了明暗枪杠
+'involved_tiles':[],  #吃碰杠时涉及到的牌
+'discard_tile':None,  #弃牌
+'reach':False  #是否应该立直
+}
+
+```
